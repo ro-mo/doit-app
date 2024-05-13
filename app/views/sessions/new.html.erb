@@ -4,6 +4,12 @@
 <h1>Sign in</h1>
 
 <%= form_with(url: sign_in_path) do |form| %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, value: params[:name_hint], required: true, autocomplete: "name" %>
+  </div>
+
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.email_field :email, value: params[:email_hint], required: true, autofocus: true, autocomplete: "email" %>
